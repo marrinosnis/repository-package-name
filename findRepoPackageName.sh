@@ -1,9 +1,12 @@
 #!/bin/bash
 
-repoName=$(basename `git -C "${pathToFolder}" rev-parse --show-toplevel`)
-owner=$1
-inputToken=$2
+pathToFolder=$1
+owner=$2
+inputToken=$3
 
+repoName=$(basename `git rev-parse --show-toplevel`)
+
+# echo "The pathToFolder is ${pathToFolder}"
 #Let's break down the line 22, about the repoName expantion.
 #The whole graphQL query will be inside single quotes ( ' ' )
 #The arguments must be in a double quotes ( " " ). This is a rule from the graphQL query language. So the arguments, owner & name, must be in double quotes.
@@ -19,26 +22,14 @@ inputToken=$2
 # escape the double quotes beacuase it is rule of graphQL language ===============================> = \"'"${variable}"'\"
 #Another way would be to just use the variable after and before the 2nd single quotes -> \"'$variable'\". Although this is not good practise and it should be avoided.
 
-if [[ $# -eq 0 ]]; then
+if [ -z "$owner" ] && [ -z "$inputToken" ]; then
   echo -e "You should provide the owner of the repo and the token with the correct access rights\n"
-elif [[ $# -eq 1 ]]; then
+elif [ -n "$owner" ] && [ -z "$inputToken" ]; then
   echo -e "You should provide also the token as the second argument\n"
 fi
 
-query='
-query repoPackageName {
-  repository(owner: \"'"${owner}"'\", name: \"'"${repoName}"'\") {
-    packages(first: 1) {
-      nodes {
-        id
-        name
-        packageType
-      }
-    }
-  }
-}
-'
-script="$(echo $query)"
+query='{"query": "{ repository(owner: \"'"${owner}"'\", name: \"'"${repoName}"'\"){ packages(first: 1) { nodes { name } } } }" }'
+echo $query > query.json
 
 graphQL_endpoint="https://api.github.com/graphql"
 
@@ -47,7 +38,7 @@ token="${inputToken}"
 graphQL_response=$(curl -s -X POST \
   -H "Authorization: bearer $token" \
   -H "Content-Type: application/json" \
-  -d "{\"query\":\"$script\"}" \
+  -d "@query.json" \
   $graphQL_endpoint)
 
 name=$(echo "$graphQL_response" | grep -o '"name":"[^"]*' | awk -F'"' '{print $4}')
