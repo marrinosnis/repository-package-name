@@ -1,13 +1,12 @@
 #!/bin/bash
 
 pathToFolder=$1
-echo -e "\nThe path fodler is ${pathToFolder}\n"
-owner=$2 #marrinosnis
+owner=$2
 token=$3
-expectedPackageName=$4 #the name of the package is: com.test-package.using-java-maven
+expectedPackageName=$4
 
 function oneTimeSetUp() {
-    script="./findRepoPackageName.sh"  #This path is configured based on the path in the shunit2 action, which runs the tests, specified in the run-tests.yaml
+    script="./findRepoPackageName.sh"
 }
 
 function testNoArgumentsProvide() {
