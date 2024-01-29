@@ -44,12 +44,12 @@ $ brew install shunit2
  `inputToken`: a properly configured token from Github which has at least the scope of `write:packages`, otherwise the call API will not work.\
  Below there is a board of the possible outcomes if something is missing from the arguments
 
-| **script**            | **arguments**                     | **outcome**                                                                                               |
-|-----------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| ./findRepoPackageName | *none*                            | You should provide the owner of the repo and the token with the correct access rights                     |
-| ./findRepoPackageName | pathToProject ownerName           | You should provide also the token as the second argument                                                  |
-| ./findRepoPackageName | All arguments given but with typo | The script will return an empty answer, as it couldn't find any packages with those credentials           |
-| ./findRepoPackageName | All arguments are correct         | The script will return the package name that it is in the repo that was provided from the path previously | 
+| **arguments**                     | **example**                                                                                                     | **outcome**                                                                                                          |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| *none*                            | ./findRepoPackageName                                                                                           | You should provide the owner of the repo and the token with the correct access rights                                |
+| pathToProject ownerName           | ./findRepoPackageName <ins>/Users/Desktop/testProject</ins> <ins>username</ins>                                 | You should provide also the token as the second argument                                                             |
+| All arguments given but with typo | ./findRepoPackageName <ins>/Users/Desktop/testProject</ins> <ins>username</ins>  <ins>876gfr432wqasd7</ins>     | The script will return an empty answer, as it couldn't find any packages with those credentials (the token is wrong) |
+| All arguments are correct         | ./findRepoPackageName <ins>/Users/Desktop/testProject</ins> <ins>username</ins>  <ins>ghp_876gfr432wqasd7</ins> | The script will return the package name that it is in the repo that was provided from the path previously            | 
     
     
 
