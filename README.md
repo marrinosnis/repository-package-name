@@ -10,29 +10,29 @@ your GraphQL queries to the GitHub. More information can be found at the followi
 
 ### Set up - first steps - execution of the script
 1) Make sure the `shunit2` is installed in your machine. To check if it is already installed you can open a new windows in terminal and execute 
-    the following command:
-    ```commandline
-    $ cat $(which shunit2) | grep "SHUNIT_VERSION"
-    ```
-    If it is <ins>installed</ins> you will get the following printed message:
-    > command [ -n "${SHUNIT_VERSION:-}" ] && exit 0
-     SHUNIT_VERSION='2.1.8'
-   
-    If it is <ins>not installed</ins> you will get the following message:
-    > shunit2 not found
-   
-    In order to install it on Ubuntu or MacOS software environment, you may use the following command in a new terminal window:\
-    `Linux\Ubuntu`
-    ```
-    $ sudo apt-get update
-    $ sudo apt-get -y install shunit2
-    ```
-   `MacOS`
+the following command:
+```commandline
+$ cat $(which shunit2) | grep "SHUNIT_VERSION"
+```
+If it is <ins>installed</ins> you will get the following printed message:
+> command [ -n "${SHUNIT_VERSION:-}" ] && exit 0
+ SHUNIT_VERSION='2.1.8'
+
+If it is <ins>not installed</ins> you will get the following message:
+> shunit2 not found
+
+In order to install it on Ubuntu or MacOS software environment, you may use the following command in a new terminal window:\
+`Linux\Ubuntu`
+```
+$ sudo apt-get update
+$ sudo apt-get -y install shunit2
+```
+`MacOS`
+```
+$ brew install shunit2
    ```
-    $ brew install shunit2
-   ```
-   > [!NOTE]  
-   > The tool `brew` is assumed that it is already installed in MacOS environment
+> [!NOTE]  
+> The tool `brew` is assumed that it is already installed in MacOS environment
 
 2) After that the `shunit2` tool is installed in your machine, it is very easy and simple to use the script and retrieve the name of the package
     from the repository. You clone the repo or download the `zip` file and extract the content. Inside the folder `repository-package-name` there
