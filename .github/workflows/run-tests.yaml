@@ -20,5 +20,11 @@ jobs:
       - name: Install the shunit2 on the github runner
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
+      - name: Extract the current folder
+        run: |
+          echo $pwd
+          currentPath=$(pwd)
+          echo "The value of the currentPath is $currentPath"
+
       - name: Run the test folder with the shunit2 framework
-        run: ./tests/test.sh . $owner $token $expectedPackageName
+        run: ./tests/test.sh $currentPath $owner $token $expectedPackageName
