@@ -3,7 +3,7 @@ name: Run bash script tests for retrieving package name
 env:
   owner: ${{ github.repository_owner }} 
   token: ${{ secrets.TOKEN }}
-  pathToFolder: repository-package-name
+  pathToFolder: .
   expectedPackageName: com.test-package.using-java-maven
 
 on:
@@ -21,4 +21,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
       - name: Run the test folder with the shunit2 framework
-        run: ./tests/test.sh $pathToFolder $owner $token $expectedPackageName
+        run: ./tests/test.sh . $owner $token $expectedPackageName
