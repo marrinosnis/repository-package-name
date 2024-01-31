@@ -19,8 +19,8 @@ jobs:
       - name: Install the shunit2 on the github runner
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
-      - name: Use the current folder a git folder project
-        run: currentDir=$(pwd)
+      - name: Store the current path as git project path
+        run: pathToFolder=$(pwd)
 
       - name: Run the test folder with the shunit2 framework
-        run: ./tests/test.sh $currentDir $owner $token $expectedPackageName
+        run: ./tests/test.sh $pathToFolder $owner $token $expectedPackageName

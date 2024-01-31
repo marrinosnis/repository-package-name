@@ -1,6 +1,9 @@
 # repository-package-name
-![bash-script-tests](https://github.com/marrinosnis/repository-package-name/actions/workflows/run-tests.yaml/badge.svg)
 
+<img src="images/shell_script_logo.jpeg" alt="image" width="200px" height="auto"> &nbsp; &nbsp;
+<img src="images/graphQL_logo.png" alt="image" width="200px" height="100">
+
+![bash-script-tests](https://github.com/marrinosnis/repository-package-name/actions/workflows/run-tests.yaml/badge.svg)
 ## Use graphQL in bash script to find and store the Package name of a repository
 
 ### References
