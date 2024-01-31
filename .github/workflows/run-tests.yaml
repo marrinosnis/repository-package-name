@@ -3,7 +3,6 @@ name: Run bash script tests for retrieving package name
 env:
   owner: ${{ github.repository_owner }} 
   token: ${{ secrets.TOKEN }}
-  pathToFolder: .
   expectedPackageName: com.test-package.using-java-maven
 
 on:
@@ -20,11 +19,8 @@ jobs:
       - name: Install the shunit2 on the github runner
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
-      - name: Extract the current folder
-        run: |
-          echo $pwd
-          currentPath=$(pwd)
-          echo "The value of the currentPath is $currentPath"
+      - name: Use the current folder a git folder project
+        run: currentDir=$(pwd)
 
       - name: Run the test folder with the shunit2 framework
-        run: ./tests/test.sh $currentPath $owner $token $expectedPackageName
+        run: ./tests/test.sh $currentDir $owner $token $expectedPackageName
