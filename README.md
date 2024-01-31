@@ -1,10 +1,11 @@
 # repository-package-name
-
-<img src="images/shell_script_logo.jpeg" alt="image" width="200px" height="auto"> &nbsp; &nbsp;
+<p align="center">
 <img src="images/graphQL_logo.png" alt="image" width="200px" height="100">
+<img src="images/shell_script_logo.jpeg" alt="image" width="200px" height="auto"> &nbsp; &nbsp;
+</p>
 
 ![bash-script-tests](https://github.com/marrinosnis/repository-package-name/actions/workflows/run-tests.yaml/badge.svg)
-## Use graphQL in bash script to find and store the Package name of a repository
+## Use graphQL with Bash Script to find and store the Package name of a repository
 
 ### References
 This script is used to retrieve the package name from a specific repository, using the GitHub's GraphQL API. More info about GitHub's graphQL 
