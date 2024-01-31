@@ -3,7 +3,7 @@
 pathToFolder=$1
 owner=$2
 inputToken=$3
-echo "The pathToFolder is $pathToFolder"
+
 repoName=$(basename `git -C "$pathToFolder" rev-parse --show-toplevel`)
 
 if [ -z "$pathToFolder" ] && [ -z "$owner" ] && [ -z "$inputToken" ]; then
