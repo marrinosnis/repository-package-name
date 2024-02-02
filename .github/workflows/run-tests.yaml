@@ -21,6 +21,9 @@ jobs:
 
       - name: Store the current path as git project path
         run: pathToFolder=$(pwd)
+      
+      - name: Print the curretDir variable
+        run: echo $pathToFolder
 
       - name: Run the test folder with the shunit2 framework
         run: ./tests/test.sh $pathToFolder $owner $token $expectedPackageName
