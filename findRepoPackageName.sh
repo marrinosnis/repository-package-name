@@ -4,12 +4,14 @@ pathToFolder=$1
 owner=$2
 inputToken=$3
 
-repoName=$(basename `git rev-parse --show-toplevel`)
+repoName=$(basename `git -C "$pathToFolder" rev-parse --show-toplevel`)
 
-if [ -z "$owner" ] && [ -z "$inputToken" ]; then
-  echo -e "You should provide the owner of the repo and the token with the correct access rights\n"
-elif [ -n "$owner" ] && [ -z "$inputToken" ]; then
-  echo -e "You should provide also the token as the second argument\n"
+if [ -z "$pathToFolder" ] && [ -z "$owner" ] && [ -z "$inputToken" ]; then
+  echo -e "You should provide the path, the owner of the repo and the token with the correct access rights\n"
+elif [ -n "$pathToFolder" ] && [ -z "$owner" ] && [ -z "$inputToken" ]; then
+  echo -e "You should provide the owner as the second argument and the token as the third argument\n"
+elif [ -n "$pathToFolder" ] && [ -n "$owner" ] && [ -z "$inputToken" ]; then
+  echo -e "You should provide the token with the correct access rigths as the third argument\n"
 fi
 
 query='

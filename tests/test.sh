@@ -10,11 +10,15 @@ function oneTimeSetUp() {
 }
 
 function testNoArgumentsProvide() {
-    assertEquals "$($script "$pathToFolder")" "You should provide the owner of the repo and the token with the correct access rights"
+    assertEquals "$($script)" "You should provide the path, the owner of the repo and the token with the correct access rights"
 }
 
-function testOnlyTheNameOfOwnerIsProvided() {
-    assertEquals "$($script "$pathToFolder" "$owner")" "You should provide also the token as the second argument"
+function testOnlyThePathIsProvided() {
+    assertEquals "$($script "$pathToFolder")" "You should provide the owner as the second argument and the token as the third argument"
+}
+
+function testPathAndNameOfOwnerAreProvided() {
+    assertEquals "$($script "$pathToFolder" "$owner")" "You should provide the token with the correct access rigths as the third argument"
 }
 
 function testExpectedNameOfPackage() {
