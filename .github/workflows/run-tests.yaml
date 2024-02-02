@@ -4,6 +4,7 @@ env:
   owner: ${{ github.repository_owner }} 
   token: ${{ secrets.TOKEN }}
   expectedPackageName: com.test-package.using-java-maven
+  pathToFolder: .
 
 on:
   push:
@@ -18,12 +19,6 @@ jobs:
 
       - name: Install the shunit2 on the github runner
         run: sudo apt-get update && sudo apt-get install -y shunit2
-
-      - name: Store the current path as git project path
-        run: pathToFolder=$(pwd)
-      
-      - name: Print the curretDir variable
-        run: echo $pathToFolder
 
       - name: Run the test folder with the shunit2 framework
         run: ./tests/test.sh $pathToFolder $owner $token $expectedPackageName
