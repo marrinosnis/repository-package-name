@@ -5,7 +5,7 @@
 </p>
 
 ![bash-script-tests](https://github.com/marrinosnis/repository-package-name/actions/workflows/run-tests.yaml/badge.svg)
-## Use graphQL with Bash Script to find and store the Package name of a repository
+## Use GraphQL with Bash Script to find and store the Package name of a repository
 
 ### References
 This script is used to retrieve the package name from a specific repository, using the GitHub's GraphQL API. More info about GitHub's graphQL 
@@ -14,7 +14,7 @@ your GraphQL queries to the GitHub. More information can be found at the followi
 
 ### Set up - first steps - execution of the script
 1) Make sure the `shunit2` is installed in your machine. To check if it is already installed you can open a new terminal winodw and execute 
-the following command:
+   the following command:
 ```commandline
 $ cat $(which shunit2) | grep "SHUNIT_VERSION"
 ```
@@ -31,16 +31,18 @@ In order to install it on Ubuntu or MacOS software environment, you may use the 
 $ sudo apt-get update
 $ sudo apt-get -y install shunit2
 ```
+
 `MacOS`
+
 ```
 $ brew install shunit2
-   ```
-> [!NOTE]  
+```
+> [!IMPORTANT]  
 > The tool `brew` is assumed that it is already installed in MacOS machine.
 
 2) After that the `shunit2` tool is installed in your machine, it is very easy and simple to use the script and retrieve the name of the package
-    from the repository. You can clone the repo or download the `zip` file and extract the content. Inside the folder `repository-package-name` there
-    is the main shell script with the name `findRepoPackageName.sh`. Also, there are some other files like the `LICENSE`, `README.md` and the `tests` folder.
+   from the repository. You can clone the repo or download the `zip` file and extract the content. Inside the folder repository-package-name there is the main shell script with
+   the name `findRepoPackageName.sh`, and some other stuff.
 
 3) The script in order to work properly takes 3 arguments:\
  `pathToFolder`: which is the path to the project from the Github from which you want to retrieve the name of package.\
@@ -50,7 +52,7 @@ $ brew install shunit2
  Below there is a board of the possible outcomes for using the `findRepoPackageName.sh`:
 
 | **arguments**                          | **example**                                                                                                     | **outcome**                                                                                                          |
-|----------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | *none*                                 | ./findRepoPackageName                                                                                           | You should provide the owner of the repo and the token with the correct access rights                                |
 | pathToProject ownerName                | ./findRepoPackageName <ins>/Users/Desktop/testProject</ins> <ins>username</ins>                                 | You should provide also the token as the second argument                                                             |
 | All arguments provided but not correct | ./findRepoPackageName <ins>/Users/Desktop/testProject</ins> <ins>username</ins>  <ins>876gfr432wqasd7</ins>     | The script will return an empty answer, as it couldn't find any packages with those credentials (the token is wrong) |
