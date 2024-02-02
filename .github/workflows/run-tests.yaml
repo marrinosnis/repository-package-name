@@ -3,7 +3,7 @@ name: Run bash script tests for retrieving package name
 env:
   owner: ${{ github.repository_owner }} 
   token: ${{ secrets.TOKEN }}
-  expectedPackageName: com.test-package.using-java-maven
+  expectedPackageName: com.test-package.using-java-mave
   pathToFolder: .
 
 on:
