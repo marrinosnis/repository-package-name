@@ -61,12 +61,14 @@ $ brew install shunit2
 > [!IMPORTANT]  
 > The tool `brew` is assumed that it is already installed in MacOS machine.
 
-After the `shunit2` tool is properly installed in your machine, to run the tests follow the steps below:
-From the root path of the current project folder, execute the following command:
+After the `shunit2` tool is properly installed in your machine, to run the tests execute the following command from the 
+root path of the current project folder:
 >./tests/test.sh . <ins>username</ins> <ins>githubToken</ins> <ins>com.test-package.using-java-maven</ins>
 
 Replace the <ins>username</ins> with yours, and the <ins>githubToken</ins> with the one that you created and at least
 has the `write:packages` scope.\
+Also notice the `.`, which is preceding the <ins>username</ins>, and states `from the current directory`. That's why when you want
+to add any new scenarios, in order to test them locally you should execute the script from the current's project root folder.\
 The `com.test-package.using-java-maven` is a package that was created for testing purposes, e.g. the script runs
 successfully, finds and returns the proper package.\
 The package can be found [here](https://github.com/marrinosnis/repository-package-name/packages/2046596)
