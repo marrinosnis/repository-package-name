@@ -12,12 +12,21 @@ on:
 jobs:
   run-tests:
     name: "Run bash script file with tests"
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        envOS: [macos-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.envOS }}
     steps:  
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Install the shunit2 on the github runner
+      - name: Install the shunit2 on the github runner inside MAC OS environment
+        if: ${{ matrix.envOS == 'macos-latest' }}
+        run: brew install shunit2
+
+      - name: Install the shunit2 on the github runner inside ubuntu environment
+        if: ${{ matrix.envOS == 'ubuntu-latest' }}
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
       - name: Run the test folder with the shunit2 framework
