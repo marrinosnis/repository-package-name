@@ -21,11 +21,11 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Install the shunit2 on the github runner inside MAC OS environment
+      - name: Install the shunit2 for UNIX environment
         if: ${{ matrix.envOS == 'macos-latest' }}
         run: brew install shunit2
 
-      - name: Install the shunit2 on the github runner inside ubuntu environment
+      - name: Install the shunit2 for LINUX environment
         if: ${{ matrix.envOS == 'ubuntu-latest' }}
         run: sudo apt-get update && sudo apt-get install -y shunit2
 
