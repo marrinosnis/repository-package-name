@@ -37,20 +37,5 @@ graphQL_response=$(curl -s -X POST \
   -d "{\"query\":\"$graphQL_query\"}" \
   $graphQL_endpoint)
 
-
-#----------another way to perform the graphQL query------------#
-# query='{"query": "{ repository(owner: \"'"${owner}"'\", name: \"'"${repoName}"'\"){ packages(first: 1) { nodes { name } } } }" }'
-# echo $query > query.json
-
-# graphQL_endpoint="https://api.github.com/graphql"
-
-# token="${inputToken}"
-
-# graphQL_response=$(curl -s -X POST \
-#   -H "Authorization: bearer $token" \
-#   -H "Content-Type: application/json" \
-#   -d "@query.json" \
-#   $graphQL_endpoint)
-
 name=$(echo "$graphQL_response" | grep -o '"name":"[^"]*' | awk -F'"' '{print $4}')
 echo "$name"
