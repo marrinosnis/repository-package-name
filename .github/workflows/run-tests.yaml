@@ -7,10 +7,18 @@ env:
   pathToFolder: .
 
 on:
-  push:
+  schedule:
+    - cron: '0 11 * * 1' # Runs only on Monday at 11:00 AM
+
+  pull_request:
+    branches:
+      - master
+    types: 
+      closed
 
 jobs:
   run-tests:
+    if: github.event.pull_request.merged == true
     name: "Run bash script file with tests"
     strategy:
       matrix:
