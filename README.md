@@ -8,7 +8,7 @@
 ## Use GraphQL with Bash Script to find and store the Package name of a repository
 
 ### References
-Thi script is used to retrieve the package name from a specific repository, using the GitHub's GraphQL API. More info about GitHub's graphQL 
+This script is used to retrieve the package name from a specific repository, using the GitHub's GraphQL API. More info about GitHub's graphQL 
 in this link: [GraphQL API Documentation](https://docs.github.com/en/graphql). Also, there is the GitHub Explorer where you can write and test 
 your GraphQL queries to the GitHub. More information can be found at the following link: [GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer).
 
