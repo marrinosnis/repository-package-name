@@ -15,6 +15,7 @@ on:
       - master
     types: 
       - opened
+      - synchronize
 
 jobs:
   run-tests:
