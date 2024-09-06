@@ -14,7 +14,7 @@ on:
 # Runs when a branch is merged into the master branch
   push:  
     branches:
-      - master
+      - check-auto-trigger
 
 jobs:
   run-tests:
