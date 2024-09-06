@@ -8,7 +8,7 @@ env:
 
 on:
   schedule:
-    - cron: '0 11 * * 1' # Runs only on Monday at 11:00 AM
+    - cron: '* 11 * * *' # Runs only on Monday at 11:00 AM
 
   pull_request:
     branches:
