@@ -7,14 +7,13 @@ env:
   pathToFolder: .
 
 on:
+ # Runs only on Monday at 11:00 AM
+  schedule:
+    - cron: '*/5 14 * * *'
 # Runs when a branch is merged into the master branch
   # push:  
   #   branches:
   #     - master
-      
- # Runs only on Monday at 11:00 AM
-  schedule:
-    - cron: '* 12 * * *'
 
 jobs:
   run-tests:
