@@ -12,10 +12,9 @@ on:
 
   pull_request:
     branches:
-      - master
+      - test-merg-trigger-action
     types: 
-      - opened
-      - synchronize
+      - closed
 
 jobs:
   run-tests:
