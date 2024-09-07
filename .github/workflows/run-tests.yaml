@@ -9,11 +9,12 @@ env:
 on:
  # Runs only on Monday at 11:00 AM
   schedule:
-    - cron: '*/5 14 * * *'
+    - cron: "0 11 * * 0"
+
 # Runs when a branch is merged into the master branch
-  # push:  
-  #   branches:
-  #     - master
+  push:  
+    branches:
+      - develop
 
 jobs:
   run-tests:
