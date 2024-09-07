@@ -14,7 +14,7 @@ your GraphQL queries to the GitHub. More information can be found at the followi
 
 ### Execution of the script
 
-1) In order to use the script, simpy clone the current repo or download as `zip` file the code and extract the content. 
+1) In order to use the script, simply clone the current repo or download as `zip` file the code and extract the content. 
    Inside the folder <ins>**repository-package-name**</ins> there is the main shell script with
    the name `findRepoPackageName.sh`, and some other files.
 
@@ -72,4 +72,3 @@ to add any new scenarios, in order to test them locally you should execute the s
 The `com.test-package.using-java-maven` is a package that was created for testing purposes, e.g. the script runs
 successfully, finds and returns the proper package.\
 The package can be found [here](https://github.com/marrinosnis/repository-package-name/packages/2046596)
-sm
