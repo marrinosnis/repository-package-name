@@ -72,3 +72,4 @@ to add any new scenarios, in order to test them locally you should execute the s
 The `com.test-package.using-java-maven` is a package that was created for testing purposes, e.g. the script runs
 successfully, finds and returns the proper package.\
 The package can be found [here](https://github.com/marrinosnis/repository-package-name/packages/2046596)
+sm
