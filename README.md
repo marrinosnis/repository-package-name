@@ -14,7 +14,7 @@ your GraphQL queries to the GitHub. More information can be found at the followi
 
 ### Execution of the script
 
-1) In order to use the script, simpy clone the current repo or download as `zip` file the code and extract the content. 
+1) In order to use the script, simply clone the current repo or download as `zip` file the code and extract the content. 
    Inside the folder <ins>**repository-package-name**</ins> there is the main shell script with
    the name `findRepoPackageName.sh`, and some other files.
 
